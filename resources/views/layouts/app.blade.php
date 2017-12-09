@@ -58,27 +58,52 @@
             <span>Dashboard</span>
           </a>
         </li>
+
+        <!--  <li>
+          <a href="home.php">
+            <i class="glyphicon glyphicon-home"></i>
+            <span>Catégories</span>
+          </a>
+        </li> -->
+
         <li>
           <a href="#" class="submenu-toggle">
             <i class="glyphicon glyphicon-th-list"></i>
-             <span>Sales</span>
+             <span>PRODUITS</span>
             </a>
             <ul class="nav submenu">
-               <li><a href="sales.php">Manage Sales</a> </li>
-               <li><a href="add_sale.php">Add Sale</a> </li>
+               <li><a href="sales.php">Boîtier</a> </li>
+               <li><a href="add_sale.php">Cartes SIM</a> </li>
            </ul>
         </li>
-        <li>
-          <a href="#" class="submenu-toggle">
+
+          <li>
+          <a href="home.php">
             <i class="glyphicon glyphicon-signal"></i>
-             <span>Sales Report</span>
-            </a>
-            <ul class="nav submenu">
-              <li><a href="sales_report.php">Sales by dates </a></li>
-              <li><a href="monthly_sales.php">Monthly sales</a></li>
-              <li><a href="daily_sales.php">Daily sales</a> </li>
-            </ul>
+            <span>INSTALLATIONS</span>
+          </a>
         </li>
+         <li>
+          <a href="home.php">
+            <i class="glyphicon glyphicon-th-large"></i>
+            <span>INSTALLATEUR</span>
+          </a>
+        </li>
+         <li>
+          <a href="home.php">
+            <i class="glyphicon glyphicon-picture"></i>
+            <span>CLIENTS</span>
+          </a>
+        </li>
+         
+          <li>
+          <a href="home.php">
+            <i class="glyphicon glyphicon-indent-left"></i>
+            <span>STATISTIQUE</span>
+          </a>
+        </li>
+
+        
     </ul>
 
    </div>
@@ -98,6 +123,39 @@
             e.preventDefault();
             $('#logout-form').submit()
         })
+    })
+
+    $(function(){
+  
+        $('#addproduct').click(function() {
+            $('#myModal').modal();
+        });
+  
+        $(document).on('submit', '#formRegister', function(e) {  
+            e.preventDefault();
+              
+            $('input+small').text('');
+            $('input').parent().removeClass('has-error');
+              
+            $.ajax({
+                method: $(this).attr('method'),
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+                dataType: "json"
+            })
+            .done(function(data) {
+                $('.alert-success').removeClass('hidden');
+                $('#myModal').modal('hide');
+            })
+            .fail(function(data) {
+                $.each(data.responseJSON, function (key, value) {
+                    var input = '#formRegister input[name=' + key + ']';
+                    $(input + '+small').text(value);
+                    $(input).parent().addClass('has-error');
+                });
+            });
+        });
+  
     })
 </script>
 </body>

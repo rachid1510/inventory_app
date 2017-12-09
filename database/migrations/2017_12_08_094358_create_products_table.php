@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('imei_product');
             $table->string('label');
             $table->string('provider');
+            $table->string('order_id');
             $table->enum('state', ['enabled', 'disabled']);
             $table->enum('status', ['0', '1','2']);
             $table->integer('category_id')->unsigned();
