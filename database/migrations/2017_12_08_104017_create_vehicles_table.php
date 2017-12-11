@@ -18,8 +18,11 @@ class CreateVehiclesTable extends Migration
             $table->string('imei');
             $table->string('model');
             $table->integer('costumer_id')->unsigned();
-            $table->foreign('costumer_id')->references('id')->on('costumers');
+           
             $table->timestamps();
+        });
+        Schema::table('vehicles', function($table) {
+          $table->foreign('costumer_id')->references('id')->on('costumers');
         });
     }
 

@@ -17,16 +17,17 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('imei_product');
             $table->string('label');
-            $table->string('provider');
-            $table->string('order_id');
             $table->enum('state', ['enabled', 'disabled']);
             $table->enum('status', ['0', '1','2']);
-            $table->integer('category_id')->unsigned();
+            $table->integer('movement_id')->unsigned();
+            $table->string('observtion');
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
+        Schema::table('products', function($table) {
+          $table->foreign('movement_id')->references('id')->on('movements');
+          $table->foreign('user_id')->references('id')->on('users');
+         });
     }
 
     /**

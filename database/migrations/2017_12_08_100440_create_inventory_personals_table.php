@@ -18,12 +18,14 @@ class CreateInventoryPersonalsTable extends Migration
             $table->integer('personal_id')->unsigned();
             $table->integer('product_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->foreign('personal_id')->references('id')->on('personals');
-            $table->foreign('product_id')->references('id')->on('products');
             $table->enum('status', ['0', '1']);
-            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
+        Schema::table('inventory_personals', function($table) {
+          $table->foreign('personal_id')->references('id')->on('personals');
+          $table->foreign('product_id')->references('id')->on('products');
+          $table->foreign('user_id')->references('id')->on('users');
+         });
     }
 
     /**

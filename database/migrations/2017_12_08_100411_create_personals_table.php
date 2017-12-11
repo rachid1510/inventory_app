@@ -18,8 +18,13 @@ class CreatePersonalsTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('phone_number');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
+        Schema::table('personals', function($table) {
+          $table->foreign('user_id')->references('id')->on('users');
+         });
     }
 
     /**

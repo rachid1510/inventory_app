@@ -14,4 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('product', 'productController@index');
+Route::get('movement', 'movementController@index');
+Route::get('boitier', 'productController@boitier');
+Route::get('sim', 'productController@sim');

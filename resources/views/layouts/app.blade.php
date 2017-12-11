@@ -65,6 +65,12 @@
             <span>Catégories</span>
           </a>
         </li> -->
+        <li>
+          <a href="movement">
+            <i class="glyphicon glyphicon-th-list"></i>
+             <span>MOUVEMENTS</span>
+            </a>
+         </li>
 
         <li>
           <a href="#" class="submenu-toggle">
@@ -72,8 +78,8 @@
              <span>PRODUITS</span>
             </a>
             <ul class="nav submenu">
-               <li><a href="sales.php">Boîtier</a> </li>
-               <li><a href="add_sale.php">Cartes SIM</a> </li>
+               <li><a href="boitier">Boîtier</a> </li>
+               <li><a href="sim">Cartes SIM</a> </li>
            </ul>
         </li>
 

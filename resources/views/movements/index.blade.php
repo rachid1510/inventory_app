@@ -9,6 +9,10 @@
     <div class="col-md-12">
       <div class="panel panel-default">
         <div class="panel-heading clearfix">
+          <div class="pull-left">
+           <h3>La liste des mouvements</h3>
+         </div>
+
          <div class="pull-right">
            <a href="#" id="addproduct" class="btn btn-primary">Add New</a>
          </div>
@@ -17,19 +21,18 @@
           <table class="table table-bordered">
             <thead>
               <tr>
-                <th class="text-center" style="width: 50px;">#</th>
-                 
-                <th class="text-center" style="width: 10%;"> IMEI </th>
-                <th class="text-center" style="width: 10%;"> Numèro </th>
+                               
+                <th class="text-center" style="width: 10%;"> Ref commande </th>
+                <th class="text-center" style="width: 10%;"> Date arrivée </th>
                 <th class="text-center" style="width: 10%;"> Fournisseur </th>
-                <th class="text-center" style="width: 10%;"> Etat </th>
-                <th class="text-center" style="width: 10%;"> Activer </th>
+                <th class="text-center" style="width: 10%;"> Plan </th>
+                <th class="text-center" style="width: 10%;"> Quantité </th>
+                 <th class="text-center" style="width: 10%;"> Observation </th>
                 <th class="text-center" style="width: 100px;"> Actions </th>
               </tr>
             </thead>
             <tbody>
-             
-              <tr>
+               <tr>
                 <td class="text-center"> </td>
                  <td class="text-center"> </td>
                 <td class="text-center"> </td>
@@ -55,13 +58,15 @@
     </div>
   </div>
 
+
+@endsection
  <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Ajouter produit</h4>
+                    <h4 class="modal-title" id="myModalLabel">Ajouter Mouvement</h4>
                 </div>
                 <div class="modal-body">
   
@@ -77,32 +82,45 @@
                         </div>
   
                         <div class="form-group">
-                            <label class="col-md-4 control-label">E-Mail Address</label>
+                            <label class="col-md-4 control-label">Fournisseur</label>
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="email">
+                                <select name="provider" class="form-control">
+                                  <option>Four1</option>
+                                  <option>Four2</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">PLAN</label>
+                            <div class="col-md-6">
+                               <input type="text" class="form-control" name="order_id">
                                 <small class="help-block"></small>
                             </div>
                         </div>
   
                         <div class="form-group">
-                            <label class="col-md-4 control-label">Password</label>
+                            <label class="col-md-4 control-label">Date arrivée</label>
                             <div class="col-md-6">
-                                <input type="password" class="form-control" name="password">
+                                <input type="date" class="form-control" name="date_arrived">
                                 <small class="help-block"></small>
                             </div>
                         </div>
   
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Confirm Password</label>
+                       <div class="form-group">
+                            <label class="col-md-4 control-label">Importer fichier</label>
                             <div class="col-md-6">
-                                <input type="password" class="form-control" name="password_confirmation">
+                               <input type="file" class="form-control" name="order_id">
+                                
                             </div>
                         </div>
   
+  
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                            <div class="col-md-6 col-md-offset-4 pull-right">
                                 <button type="submit" class="btn btn-primary">
-                                    Register
+                                    Valider
                                 </button>
                             </div>
                         </div>
@@ -112,4 +130,3 @@
             </div>
         </div>
     </div>
-@endsection
