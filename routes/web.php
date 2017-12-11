@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('home', 'homeController@index');
 Route::get('movement', 'movementController@index');
 Route::get('boitier', 'productController@boitier');
 Route::get('sim', 'productController@sim');
+Auth::routes();

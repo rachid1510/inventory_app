@@ -4,57 +4,37 @@
 
      <div class="row">
      <div class="col-md-12">
-        <div class="pull-left">
-           <h3>La liste des boitiers</h3>
-         </div>
+       
      </div>
     <div class="col-md-12">
       <div class="panel panel-default">
         <div class="panel-heading clearfix">
+          <div class="pull-left">
+           <h3>La liste des mouvements</h3>
+         </div>
 
-          <div class="col-md-10 pull-left">
-           <form>
-            <div class="form-group col-md-4">
-              <label class="control-label">IMEI</label>
-             <input type="text" class="form-control" name="imei" placeholder="IMEI">
-           </div>
-             <div class="form-group col-md-4">
-              <label class="control-label">Réf Commande</label>
-             <input type="text" class="form-control" name="ref_order" placeholder="REF COMMANDE">
-           </div>
-             <div class="form-group col-md-4">
-              <label class="control-label">Date arrivée</label>
-             <input type="date" class="form-control" name="date_debut" placeholder="DATE ARRIVEE">
-           </div>
-           </form>
-           </div>
-        
-           <div class="col-md-2 pull-right"><br/>
-            <a href="#" id="filtrer" class="btn btn-primary">Filtrer</a>
-          
-
+         <div class="pull-right">
+           <a href="#" id="addproduct" class="btn btn-primary">Add New</a>
          </div>
         </div>
         <div class="panel-body">
           <table class="table table-bordered">
             <thead>
               <tr>
-                             
-                <th class="text-center" style="width: 10%;"> IMEI </th>
-                <th class="text-center" style="width: 10%;"> Numèro </th>
+                               
+                <th class="text-center" style="width: 10%;"> Ref commande </th>
+                <th class="text-center" style="width: 10%;"> Date arrivée </th>
                 <th class="text-center" style="width: 10%;"> Fournisseur </th>
-                <th class="text-center" style="width: 10%;"> Modèle </th>
-                <th class="text-center" style="width: 10%;"> Etat </th>
-                <th class="text-center" style="width: 10%;"> Activer </th>
+                <th class="text-center" style="width: 10%;"> Plan </th>
+                <th class="text-center" style="width: 10%;"> Quantité </th>
+                 <th class="text-center" style="width: 10%;"> Observation </th>
                 <th class="text-center" style="width: 100px;"> Actions </th>
               </tr>
             </thead>
             <tbody>
-             
-              <tr>
-                
-                 <td class="text-center"> </td>
+               <tr>
                 <td class="text-center"> </td>
+                 <td class="text-center"> </td>
                 <td class="text-center"> </td>
                 <td class="text-center"> </td>
                 <td class="text-center"> </td>

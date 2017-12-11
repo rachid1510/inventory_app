@@ -12,6 +12,7 @@
     @yield('css')
 </head>
 <body>
+   @if (Auth::check())
     <header id="header">
       <div class="logo pull-left"> OSWA - Inventory </div>
       <div class="header-content">
@@ -20,32 +21,12 @@
       </div>
       <div class="pull-right clearfix">
         <ul class="info-menu list-inline list-unstyled">
-          <li class="profile">
-            <a href="#" data-toggle="dropdown" class="toggle" aria-expanded="false">
-              <img src="#" alt="user-image" class="img-circle img-inline">
-              <span> <i class="caret"></i></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                  <a href="#">
-                      <i class="glyphicon glyphicon-user"></i>
-                      Profile
-                  </a>
-              </li>
-             <li>
-                 <a href="edit_account.php" title="edit account">
-                     <i class="glyphicon glyphicon-cog"></i>
-                     Settings
-                 </a>
-             </li>
-             <li class="last">
-                 <a href="#">
+           <li class="last">
+                 <a href="{{ route('logout') }}">
                      <i class="glyphicon glyphicon-off"></i>
                      Logout
                  </a>
              </li>
-           </ul>
-          </li>
         </ul>
       </div>
      </div>
@@ -108,11 +89,11 @@
             <span>STATISTIQUE</span>
           </a>
         </li>
-
-        
+    
     </ul>
 
    </div>
+    @endif 
    <div class="page">
      <div class="container-fluid">
      @yield('content')
@@ -134,6 +115,9 @@
     $(function(){
   
         $('#addproduct').click(function() {
+            $('#myModal').modal();
+        });
+       $('#showmodal').click(function() {
             $('#myModal').modal();
         });
   
